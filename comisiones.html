@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Proyecto de Título | Segundo semestre, 2023</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <style>span.innovacion{color:#dc3545;width:20px}span.investigacion{color:#198754;width:20px}span.creacion{color:#0d6efd;width:20px}</style>
+    </head>
+
+    <body>
+        <main class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="my-4 fs-4">Alternativas para comisiones</h1>
+                </div>
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                    <select class="form-select mb-3">
+                        <option selected>Seleccione un título profesional</option>
+                        <option value="dis">Diseñador/a</option>
+                        <option value="disvm">Diseñador/a mención Visual y Medios</option>
+                        <option value="disis">Diseñador/a mención Industrial y Servicios</option>
+                    </select>
+                </div>
+                <div id="resultado" class="d-none col-12">
+                    <p class="ps-2">
+                        Énfasis en <span class="badge rounded-pill text-bg-danger">Innovación</span> <span class="badge rounded-pill text-bg-success">Investigación</span> <span class="badge rounded-pill text-bg-primary">Creación</span>
+                    </p>
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered table-striped-columns small">
+                            <thead>
+                                <tr>
+                                    <th scope="col">HORARIO</th>
+                                    <th scope="col">LUNES</th>
+                                    <th scope="col">MARTES</th>
+                                    <th scope="col">MIÉRCOLES</th>
+                                    <th scope="col">JUEVES</th>
+                                    <th scope="col">VIERNES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><small>09:00 a 10.50 hrs</small></th>
+                                    <td id="lun1"></td>
+                                    <td id="mar1"></td>
+                                    <td id="mie1"></td>
+                                    <td id="jue1"></td>
+                                    <td id="vie1"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><small>11.00 a 12.50 hrs.</small></th>
+                                    <td id="lun2"></td>
+                                    <td id="mar2"></td>
+                                    <td id="mie2"></td>
+                                    <td id="jue2"></td>
+                                    <td id="vie2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><small>15.00 a 16.50 hrs.</small></th>
+                                    <td id="lun3"></td>
+                                    <td id="mar3"></td>
+                                    <td id="mie3"></td>
+                                    <td id="jue3"></td>
+                                    <td id="vie3"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><small>17.00 a 18.50 hrs.</small></th>
+                                    <td id="lun4"></td>
+                                    <td id="mar4"></td>
+                                    <td id="mie4"></td>
+                                    <td id="jue4"></td>
+                                    <td id="vie4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="ps-2 text-body-secondary">Desarrollado por <a href="https://faco.cl/" target="_blank" class="link-secondary">FACO</a></p>
+                </div>
+            </div>
+        </footer>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+            integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            var datos;
+            //LUNES
+            const hr_lun_1 = document.querySelector("#lun1");
+            const hr_lun_2 = document.querySelector("#lun2");
+            const hr_lun_3 = document.querySelector("#lun3");
+            const hr_lun_4 = document.querySelector("#lun4");
+            //MARTES
+            const hr_mar_1 = document.querySelector("#mar1");
+            const hr_mar_2 = document.querySelector("#mar2");
+            const hr_mar_3 = document.querySelector("#mar3");
+            const hr_mar_4 = document.querySelector("#mar4");
+            //MIÉRCOLES
+            const hr_mie_1 = document.querySelector("#mie1");
+            const hr_mie_2 = document.querySelector("#mie2");
+            const hr_mie_3 = document.querySelector("#mie3");
+            const hr_mie_4 = document.querySelector("#mie4");
+            //JUEVES
+            const hr_jue_1 = document.querySelector("#jue1");
+            const hr_jue_2 = document.querySelector("#jue2");
+            const hr_jue_3 = document.querySelector("#jue3");
+            const hr_jue_4 = document.querySelector("#jue4");
+            //VIERNES
+            const hr_vie_1 = document.querySelector("#vie1");
+            const hr_vie_2 = document.querySelector("#vie2");
+            const hr_vie_3 = document.querySelector("#vie3");
+            const hr_vie_4 = document.querySelector("#vie4");
+
+            const seleccion = document.querySelector("select");
+
+            var dis = [];
+            var disis = [];
+            var disvm = [];
+
+            const resultado = document.querySelector("#resultado");
+
+            Papa.parse("https://raw.githubusercontent.com/disenoUChile/titulo/main/data/comisiones.csv", {
+                download: true,
+                header: true,
+                complete: function (results) {
+                    datos = results.data;
+                    console.log(datos);
+                    datos.forEach((d) => {
+                        if (d.mencion.includes("Diseñador/a sin mención")) {
+                            dis.push(d);
+                        }
+                        if (d.mencion.includes("Diseñador/a con mención Industrial y Servicios")) {
+                            disis.push(d);
+                        }
+                        if (d.mencion.includes("Diseñador/a con mención Visualidad y Medios")) {
+                            disvm.push(d);
+                        }
+                    });
+                    console.log(dis);
+                    console.log(disis);
+                    console.log(disvm);
+
+                    seleccion.addEventListener("change", (event) => {
+                        hr_lun_1.innerHTML = "";
+                        hr_lun_2.innerHTML = "";
+                        hr_lun_3.innerHTML = "";
+                        hr_lun_4.innerHTML = "";
+                        hr_mar_1.innerHTML = "";
+                        hr_mar_2.innerHTML = "";
+                        hr_mar_3.innerHTML = "";
+                        hr_mar_4.innerHTML = "";
+                        hr_mie_1.innerHTML = "";
+                        hr_mie_2.innerHTML = "";
+                        hr_mie_3.innerHTML = "";
+                        hr_mie_4.innerHTML = "";
+                        hr_jue_1.innerHTML = "";
+                        hr_jue_2.innerHTML = "";
+                        hr_jue_3.innerHTML = "";
+                        hr_jue_4.innerHTML = "";
+                        hr_vie_1.innerHTML = "";
+                        hr_vie_2.innerHTML = "";
+                        hr_vie_3.innerHTML = "";
+                        hr_vie_4.innerHTML = "";
+
+                        if (event.target.value == "dis") {
+                            tabla(dis);
+                            resultado.classList.remove("d-none");
+                        } else if (event.target.value == "disis") {
+                            tabla(disis);
+                            resultado.classList.remove("d-none");
+                        } else if (event.target.value == "disvm") {
+                            tabla(disvm);
+                            resultado.classList.remove("d-none");
+                        } else {
+                            resultado.classList.add("d-none");
+                        }
+                    });
+                },
+            });
+
+            function tabla(mencion) {
+                function integrante(m) {
+                    var nombre;
+                    var enfasis = [];
+                    enfasis = m.enfasis.split(", ");
+                    if (m.perfil) {
+                        nombre = `<a href="${m.perfil}" target="_blank" class="link-dark link-underline-opacity-10 link-underline-opacity-100-hover">${m.jerarquia} ${m.nombre} ${m.apellidos.split(" ")[0]}</a>`;
+                    } else {
+                        nombre = `${m.jerarquia} ${m.nombre} ${m.apellidos.split(" ")[0]}`;
+                    }
+                    return `<span class="badge rounded-pill text-bg-light">${enfasis.map((x) => "<span class='" + x + "'>●</span>")} ${nombre}</span>`;
+                }
+                mencion.forEach((m) => {
+                    if (m.horario.includes("lunes-1")) {
+                        hr_lun_1.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("lunes-2")) {
+                        hr_lun_2.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("lunes-3")) {
+                        hr_lun_3.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("lunes-4")) {
+                        hr_lun_4.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("martes-1")) {
+                        hr_mar_1.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("martes-2")) {
+                        hr_mar_2.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("martes-3")) {
+                        hr_mar_3.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("martes-4")) {
+                        hr_mar_4.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("miércoles-1")) {
+                        hr_mie_1.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("miércoles-2")) {
+                        hr_mie_2.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("miércoles-3")) {
+                        hr_mie_3.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("miércoles-4")) {
+                        hr_mie_4.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("jueves-1")) {
+                        hr_jue_1.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("jueves-2")) {
+                        hr_jue_2.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("jueves-3")) {
+                        hr_jue_3.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("jueves-4")) {
+                        hr_jue_4.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("viernes-1")) {
+                        hr_vie_1.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("viernes-2")) {
+                        hr_vie_2.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("viernes-3")) {
+                        hr_vie_3.innerHTML += integrante(m);
+                    }
+                    if (m.horario.includes("viernes-4")) {
+                        hr_vie_4.innerHTML += integrante(m);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
