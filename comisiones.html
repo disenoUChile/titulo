@@ -214,9 +214,9 @@
                     var enfasis = [];
                     enfasis = m.enfasis.split(", ");
                     if (m.perfil) {
-                        nombre = `<a href="${m.perfil}" target="_blank" class="link-dark link-underline-opacity-10 link-underline-opacity-100-hover">${m.jerarquia} ${m.nombre} ${m.apellidos.split(" ")[0]}</a>`;
+                        nombre = `<a href="${m.perfil}" target="_blank" class="link-dark link-underline-opacity-10 link-underline-opacity-100-hover">${m.jerarquia} ${m.nombre} ${m.apellidom}</a>`;
                     } else {
-                        nombre = `${m.jerarquia} ${m.nombre} ${m.apellidos.split(" ")[0]}`;
+                        nombre = `${m.jerarquia} ${m.nombre} ${m.apellidom}`;
                     }
                     return `<span class="badge rounded-pill text-bg-light" data-enfasis="${m.enfasis.replace(",", "")}">${enfasis.map((x) => "<span class='" + x + "'>●</span>")} ${nombre}</span>`;
                 }
