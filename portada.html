@@ -28,9 +28,9 @@
     <body class="bg-light">
         <div class="container">
             <div class="col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto">
-                <h1 class="mt-5 mb-3"><a href="memorias.html" class="link-dark">Memorias</a> / Datos en la portada</h1>
+                <h1 class="fs-2 mt-5 mb-3"><a href="memorias.html" class="link-dark">Memorias</a> / Son 6 los datos a considerar en la portada</h1>
 
-                <p>A continuación se detallan los seis datos a considerar en la portada:</p>
+                <p>Por favor lea con atención la indicación a la izquierda, y tome como referencia lo que está a la derecha.</p>
 
                 <div id="output">
                     <div id="printable">
@@ -71,7 +71,7 @@
                             <tr>
                                 <td class="w-50 text-body-secondary"><span class="numerado">3</span> Debajo del nombre del trabajo, se identifica el título al que se opta</td>
                                 <td class="text-center">
-                                    <p id="optar">Memoria presentada para optar al título de ……………</p>
+                                    <p id="optando">Memoria presentada para optar ……………</p>
                                 </td>
                             </tr>
                             <tr>
@@ -79,7 +79,7 @@
                                     <span class="numerado">4</span> Debajo de la identificación del título al que se opta, van NOMBRES Y APELLIDOS de la/el estudiante que presenta la memoria, EN MAYÚSCULAS.
                                 </td>
                                 <td class="text-center">
-                                    <p id="estudiante">NOMBRE NOMBRE APELLIDO APELLIDO</p>
+                                    <p id="nombrando">NOMBRE NOMBRE APELLIDO APELLIDO</p>
                                 </td>
                             </tr>
                             <tr>
@@ -89,7 +89,7 @@
                                 </td>
                                 <td class="text-center">
                                     <p id="guiando">
-                                        PROFESORA GUÍA<br />
+                                        PROFESOR/A GUÍA<br />
                                         NOMBRE APELLIDO
                                     </p>
                                 </td>
@@ -130,8 +130,47 @@
                     <div class="modal-body">
                         <form id="datos">
                             <div class="mb-3">
-                                <label for="guiar" class="form-label">Profesor/a Guía</label>
-                                <input list="profe" type="text" name="guiar" />
+                                <label for="titular" class="form-label">Título de su memoria</label><br />
+                                <textarea name="titular" class="w-100"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="optar" class="form-label">Grado al que opta</label><br />
+                                <select name="optar" class="form-select w-100">
+                                    <option selected>Seleccionar…</option>
+                                    <option value="Memoria para optar al grado académico de Licenciado en Diseño">Licenciada en Diseño</option>
+                                    <option value="Memoria para optar al grado académico de Licenciada en Diseño">Licenciado en Diseño</option>
+                                    <option value="Memoria para optar al título de Diseñador">Diseñador</option>
+                                    <option value="Memoria para optar al título de Diseñadora">Diseñadora</option>
+                                    <option value="Memoria para optar al título de Diseñador mención Industrial y Servicios">Diseñador, mención Industrial y Servicios</option>
+                                    <option value="Memoria para optar al título de Diseñadora mención Industrial y Servicios">Diseñadora, mención Industrial y Servicios</option>
+                                    <option value="Memoria para optar al título de Diseñador mención Visualidad y Medios">Diseñador, mención Visualidad y Medios</option>
+                                    <option value="Memoria para optar al título de Diseñadora mención Visualidad y Medios">Diseñadora, mención Visualidad y Medios</option>
+                                    <option value="Memoria para optar al título de Diseñador Gráfico">Diseñador Gráfico</option>
+                                    <option value="Memoria para optar al título de Diseñadora Gráfica">Diseñadora Gráfica</option>
+                                    <option value="Memoria para optar al título de Diseñador Industrial">Diseñador Industrial</option>
+                                    <option value="Memoria para optar al título de Diseñadora Industrial">Diseñadora Industrial</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="apellidop" class="form-label">Su apellido <em>paterno</em>:</label><br />
+                                <input type="text" name="apellidop" class="w-100" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="apellidom" class="form-label">Su apellido <em>materno</em>:</label><br />
+                                <input type="text" name="apellidom" class="w-100" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombres" class="form-label">Sus nombre(s):</label><br />
+                                <input type="text" name="nombres" class="w-100" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="guiar" class="form-label">Su Profesor/a Guía</label><br />
+                                <input list="profe" type="text" name="guiar" class="w-100" />
                                 <datalist id="profe">
                                     <option value="Profesora Jenny Abud Carrillo"></option>
                                     <option value="Profesora Paola Benavides Bermúdez"></option>
@@ -177,20 +216,6 @@
                                     <option value="Profesor Osvaldo Zorzano Betancourt"></option>
                                 </datalist>
                             </div>
-
-                            <label for="guiar">Profesor/a Guía</label><br />
-                            <input list="profe" type="text" name="guiar" />
-
-                            <label for="apellidop">Apellido <em>paterno</em>:</label><br />
-                            <input type="text" name="apellidop" />
-                            <label for="apellidom">Apellidos <em>materno</em>:</label><br />
-                            <input type="text" name="apellidom" />
-                            <label for="nombres">Nombre(s):</label><br />
-                            <input type="text" name="nombres" />
-                            <label for="signo">Signo Zodiacal:</label><br />
-                            <select name="signo"></select>
-                            <label for="razon">Razón por la que sigues en el OPR:</label><br />
-                            <textarea name="razon"></textarea>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -226,11 +251,25 @@
                     document.querySelector('input[name="apellidop"]').value.toUpperCase() +
                     " " +
                     document.querySelector('input[name="apellidom"]').value.toUpperCase();
-                document.querySelector("#estudiante").innerHTML = `${nombreCompleto}`;
 
-                let profeGuia;
 
-                document.querySelector('input[name="nombres"]');
+                let leGuia = document.querySelector('input[name="guiar"]').value.toUpperCase();
+
+                let nombreGuia;
+
+                if (leGuia.includes("PROFESORA")){
+                    nombreGuia = leGuia.replace('PROFESORA', 'PROFESORA GUÍA<br>');
+                } else {
+                    nombreGuia = leGuia.replace('PROFESOR', 'PROFESOR GUÍA<br>');
+                }
+                
+                document.querySelector("#titulando").innerHTML = document.querySelector('textarea[name="titular"]').value;
+
+                document.querySelector("#optando").innerHTML = document.querySelector('select[name="optar"]').value;
+
+                document.querySelector("#nombrando").innerHTML = nombreCompleto;
+
+                document.querySelector("#guiando").innerHTML = nombreGuia;
             });
         </script>
     </body>
