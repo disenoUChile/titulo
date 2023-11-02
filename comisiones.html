@@ -3,49 +3,48 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Proyecto de Título | Segundo semestre, 2023</title>
+        <title>DISEÑO — COORDINACIÓN DE TÍTULO</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        <style>
-            span.innovacion {
-                color: var(--bs-primary);
-            }
-            span.investigacion {
-                color: var(--bs-info);
-            }
-            span.creacion {
-                color: var(--bs-warning);
-            }
-
-            .apaga {
-                opacity: 0.5;
-            }
-            .descarta {
-                filter: grayscale(0.9);
-                opacity: 0.25;
-            }
-        </style>
+        <link href="style.css" rel="stylesheet" />
     </head>
-    <body>
-        <main class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="my-4 fs-4">Alternativas para comisiones</h1>
+    <body class="bg-light">
+        <nav class="fixed-top bg-light" style="opacity: 0.95;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-11 col-xl-10 col-xxl-9 mx-auto">
+                        <div class="row align-items-center">
+                            <div class="col-6 py-3">
+                                <h3 class="float-start fs-6 m-0 p-0">DISEÑO — COORDINACIÓN DE TÍTULO</h3>
+                            </div>
+                            <div class="col-6 py-3">
+                                <select class="form-select form-select-sm w-50 float-end m-0 py-1 px-2" onchange="location = this.value;">
+                                    <option value="#">MENÚ</option>
+                                    <option value="memorias.html">memorias</option>
+                                    <option value="comisiones.html" selected>comisiones</option>
+                                    <option value="informacion.html">información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-                    <select class="form-select mb-3">
+            </div>
+        </nav>
+        <main class="container pt-5">
+            <div class="row">
+                <div class="col-lg-11 col-xl-10 col-xxl-9 mx-auto">
+                    <h1 class="fs-3 mt-5 mb-3">Comisiones</h1>
+                    <select class="form-select mb-3" id="menciones">
                         <option selected>Seleccione un título profesional</option>
                         <option value="dis">Diseñador/a</option>
                         <option value="disvm">Diseñador/a mención Visual y Medios</option>
                         <option value="disis">Diseñador/a mención Industrial y Servicios</option>
                     </select>
-                </div>
-                <div id="resultado" class="d-none col-12">
                     <p>
                         <button type="button" class="btn btn-sm btn-primary px-3 mb-1" onclick="innovadores()" id="primero">Innovación</button>
                         <button type="button" class="btn btn-sm btn-info px-3 mb-1" onclick="investigadores()" id="segundo">Investigación</button>
                         <button type="button" class="btn btn-sm btn-warning px-3 mb-1" onclick="creadores()" id="tercero">Creación</button>
                     </p>
-                    <div class="table-responsive my-4">
+                    <div class="table-responsive my-4 esconde">
                         <table class="table table-bordered table-striped-columns small">
                             <thead>
                                 <tr>
@@ -96,13 +95,20 @@
                 </div>
             </div>
         </main>
-        <footer class="container">
-            <div class="row">
-                <div class="col">
-                    <p class="ps-2 text-body-secondary">Desarrollado por <a href="https://faco.cl/" target="_blank" class="link-secondary">FACO</a></p>
+
+        <div class="pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-11 col-xl-10 col-xxl-9 mx-auto">
+                        <p class="small d-flex justify-content-between align-items-center text-body-secondary">
+                            <span>Desarrollado por <a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
+                            <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
             integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
@@ -137,7 +143,9 @@
             const hr_vie_3 = document.querySelector("#vie3");
             const hr_vie_4 = document.querySelector("#vie4");
 
-            const seleccion = document.querySelector("select");
+            const seleccion = document.querySelector("#menciones");
+
+            const escondidos = document.querySelectorAll(".esconde");
 
             var dis = [];
             var disis = [];
@@ -167,6 +175,8 @@
                     console.log(disvm);
 
                     seleccion.addEventListener("change", (event) => {
+
+
                         document.querySelector("#primero").classList.remove("apaga");
                         document.querySelector("#segundo").classList.remove("apaga");
                         document.querySelector("#tercero").classList.remove("apaga");

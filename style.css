@@ -1,0 +1,36 @@
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.numerado {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: #444;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 90%;
+    margin-right: 0.25rem;
+    margin-top: -5px;
+}
+
+            span.innovacion {
+                color: var(--bs-primary);
+            }
+            span.investigacion {
+                color: var(--bs-info);
+            }
+            span.creacion {
+                color: var(--bs-warning);
+            }
+
+            .apaga {
+                opacity: 0.5;
+            }
+            .descarta {
+                filter: grayscale(0.9);
+                opacity: 0.25;
+            }
