@@ -49,6 +49,21 @@
                     <p><em>Por un ajuste al reglamento, queda que la dirección puede ser directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p> 
 
                     <p>Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I y II), aportan al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR. Quienes lo hacen en Proyecto de Título (I y II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.</p>
+
+                    <p>En la tabla que sigue se indica la cantidad de guiadas/os en segundo semestre de 2023:</p>
+
+                <table class="table table-hover small">
+                <!--<caption class="text-center small text-body-secondary">* Docentes que no cumplen con adscripción ni jerarquía, habilitadas/os por ajuste de reglamento a ser co-guías.</caption>-->
+                <thead>
+                    <tr>
+                        <th>Profesor(a) Guía</th>
+                        <th class="text-center">Seminario</th>
+                        <th class="text-center">Proyecto</th>
+                        <th class="text-center">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="docentes"></tbody>
+            </table> 
                     
                 </div>
             </div>
@@ -68,6 +83,9 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <script>
             document.addEventListener("scroll", (event) => {
                 document.querySelector("nav").classList.add("shadow-sm");
@@ -79,6 +97,68 @@
                     document.querySelector("nav").classList.remove("shadow-sm");
                 }
             });
+
+            var parciales = {
+                seminario: [],
+                titulo: []
+            };
+            var total;
+            var profes = [];
+            var docentesSinRepetir;
+            const docentes = document.querySelector("#docentes");
+
+            Papa.parse("https://raw.githubusercontent.com/disenoUChile/titulo/main/data/guiaturas.csv", {
+                download: true,
+                header: true,
+                complete: function (results) {
+                    console.log(results);
+                    datos = results.data;
+                    datos.forEach((d) => {
+                        if (d.year == "4") { parciales.seminario.push(d); } 
+                        if (d.year == "4") { parciales.titulo.push(d); } 
+                        profes.push(d.profe);
+                    });
+                    total = parciales.seminario.length + parciales.titulo.length;
+                    docentesSinRepetir = [...new Set(profes)];
+                    var todos = 0;
+                    var filaTipo;
+                    docentesSinRepetir.forEach(x => {
+                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}</td><td class="text-center fw-bold">${todas(x)}</td></tr>`;
+
+                    })
+                }
+            });
+            function todas(x) {
+                let numero = 0;
+                datos.forEach(d => {
+                    if (d.profe == x) { 
+                        numero++;
+                    }
+                })
+                return numero;
+            }
+
+            function seminaristas(x) {
+                let numero = 0;
+                datos.forEach(d => {
+                    if (d.profe == x && d.year == "4") { 
+                        numero++;
+                    }
+                })
+                return numero;
+            }
+
+            function titulantes(x) {
+                let numero = 0;
+                datos.forEach(d => {
+                    if (d.profe == x && d.year == "5") { 
+                        numero++;
+                    }
+                })
+                return numero;
+            }
+
+
         </script>
     </body>
 </html>
