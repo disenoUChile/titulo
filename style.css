@@ -1,6 +1,12 @@
 em {
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
+}
+
+.display{
+    font-size:calc(2rem + 1.5vh + 1.5vw);
+    font-weight: 300;
+    color:#ABBBC4;
 }
 
 .numerado {
