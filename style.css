@@ -17,20 +17,24 @@ em {
     margin-top: -5px;
 }
 
-            span.innovacion {
-                color: var(--bs-primary);
-            }
-            span.investigacion {
-                color: var(--bs-info);
-            }
-            span.creacion {
-                color: var(--bs-warning);
-            }
+span.innovacion {
+    color: var(--bs-primary);
+}
+span.investigacion {
+    color: var(--bs-info);
+}
+span.creacion {
+    color: var(--bs-warning);
+}
 
-            .apaga {
-                opacity: 0.5;
-            }
-            .descarta {
-                filter: grayscale(0.9);
-                opacity: 0.25;
-            }
+.apaga {
+    opacity: 0.5;
+}
+.descarta {
+    filter: grayscale(0.9);
+    opacity: 0.25;
+}
+
+figure img {
+    width: min(100%, 480px);
+}
