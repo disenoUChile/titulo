@@ -72,4 +72,6 @@ a[href$=".pdf"] {
 
 a[href$=".pdf"]:hover {
     background-color: #fff;
+    text-decoration: underline;
+    transition: all ease 1s;
 }

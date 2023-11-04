@@ -46,7 +46,7 @@
                         <li class="mx-3 text-body-secondary small">[Para Profesor/a Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</li>
                     </ul>
 
-                    <p>Por un ajuste al reglamento, queda que la dirección puede ser directa o indirecta; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p>
+                    <p>Por un <em>ajuste al reglamento</em> (solicitado por la Escuela de Pregrado al Decanato), queda que <em>la dirección puede ser directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p>
 
                     <p>Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I o II), aportan al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR; y quienes lo hacen en Proyecto de Título (I o II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.</p>
 
@@ -67,8 +67,9 @@
                         <tbody id="docentes"></tbody>
                     </table>
 
-                    <p>
-                        En el segundo semestre de 2023, hay un total de <span id="guiades"></span> estudiantes guiadas/os. Considerando que el total de habilitadas/os para guiar y co-guiar es de <span id="profes"></span>, el promedio de estudiantes por guía o co-guía se acerca a <span id="promedio"></span>.
+                    <p>En el segundo semestre de 2023, hay un total de <span id="guiades"></span> estudiantes guiadas/os. Considerando que el total de habilitadas/os para guiar y co-guiar es de <span id="profes"></span>, el promedio de estudiantes por guía o co-guía se acerca a <span id="promedio"></span>.</p>
+
+                    <p> Sin el ajuste al reglamento descrito más arriba, el total de Profesores/as Guía sería de <span id="profereglamento"></span>, y cada Profesor/a debería guiar a un promedio de <span id="promedioreglamento"></span> estudiantes.
                     </p>
                 </div>
             </div>
@@ -123,6 +124,10 @@
             const guias =  document.querySelector("#profes");
             const promedio = document.querySelector("#promedio");
 
+            const guiasreglamento = document.querySelector("#profereglamento");
+            const promedioreglamento = document.querySelector("#promedioreglamento");
+
+
             Papa.parse("https://raw.githubusercontent.com/disenoUChile/titulo/main/data/guiaturas.csv", {
                 download: true,
                 header: true,
@@ -154,6 +159,10 @@
                 guiades.innerHTML = todoSeminario+todoTitulo+14;
                 guias.innerHTML = docentesSinRepetir.length;
                 promedio.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/docentesSinRepetir.length);
+
+
+                guiasreglamento.innerHTML = docentesSinRepetir.length-12;
+                promedioreglamento.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/(docentesSinRepetir.length-12));
 
 
                 }
