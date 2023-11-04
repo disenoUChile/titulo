@@ -14,7 +14,7 @@
                     <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                         <div class="row align-items-center">
                             <div class="col-6 py-3">
-                                <h1 class="float-start fs-6 m-0 p-0">DISEÑO — <span class="d-none d-md-inline">COORDINACIÓN DE</span> TÍTULO</h1>
+                                <h1 class="float-start fs-6 m-0 p-0">DISEÑO — <span class="d-none d-lg-inline">COORDINACIÓN DE</span> TÍTULO</h1>
                             </div>
                             <div class="col-6 py-3">
                                 <select class="form-select form-select-sm w-75 float-end m-0 py-1 px-2" onchange="location = this.value;">
@@ -56,12 +56,9 @@
 
                     <p>En la tabla que sigue se identifica a quienes se desempeñan en el segundo semestre de 2023 como guías o co-guías*, junto con la cantidad de guiadas/os por cada una/o:</p>
 
-                    <table class="table table-hover small">
+                    <table class="table small">
                         <caption class="text-center small text-body-secondary">
-                            El asterisco (*) marca a docentes que no cumplen con adscripción ni jerarquía, pero fueron habilitadas/os a ser co-guías por ajuste al reglamento. Las cifras que en la columna de Proyecto son agregadas como +9 y
-                            +5 refieren, respectivamente, al total de estudiantes en mención industrial y mención gráfica del
-                            <abbr title="Taller Excepcional de Titulación" class="initialism">TET</abbr>
-                            .
+                            El asterisco* marca a docentes que no cumplen con adscripción ni jerarquía, pero fueron habilitadas/os a ser co-guías por ajuste al reglamento. Las cifras que en la columna de Proyecto son agregadas como +9 y +5 refieren, respectivamente, al total de estudiantes en mención industrial y mención gráfica del <abbr title="Taller Excepcional de Titulación" class="initialism">TET</abbr>. Cada mención del <abbr title="Taller Excepcional de Titulación" class="initialism">TET</abbr> se suma una única vez al total.
                         </caption>
                         <thead>
                             <tr>
@@ -75,8 +72,7 @@
                     </table>
 
                     <p>
-                        El total es de <span id="guiades"></span> estudiantes guiadas/os. Cuando el total de habilitadas/os para guiar es de <span id="profes"></span>, el promedio de estudiantes por guía debería ser de
-                        <span id="promedio"></span>.
+                        En el segundo semestre de 2023, hay un total de <span id="guiades"></span> estudiantes guiadas/os. Considerando que el total de habilitadas/os para guiar y co-guiar es de <span id="profes"></span>, el promedio de estudiantes por guía o co-guía debería ser de <span id="promedio"></span>.
                     </p>
                 </div>
             </div>
@@ -87,7 +83,7 @@
                 <div class="row">
                     <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                         <p class="small d-flex justify-content-between align-items-center text-body-secondary">
-                            <span>Desarrollado por <a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
+                            <span><span class="d-none d-lg-inline">Desarrollado por </span><a href="https://faco.cl/profesor/" target="_blank" class="link-secondary" title="Felipe Alberto Cortez Orellana">FACO</a></span>
                             <span><a href="mailto:coordinacion.titulo.diseno@uchilefau.cl" class="link-secondary">coordinacion.titulo.diseno@uchilefau.cl</a></span>
                         </p>
                     </div>
@@ -134,6 +130,7 @@
             Papa.parse("https://raw.githubusercontent.com/disenoUChile/titulo/main/data/guiaturas.csv", {
                 download: true,
                 header: true,
+                    dynamicTyping: true,
                 complete: function (results) {
                     console.log(results);
                     datos = results.data;
@@ -147,7 +144,6 @@
                     docentesSinRepetir.forEach(x => {
                         todoSeminario = todoSeminario + seminaristas(x);
                         todoTitulo = todoTitulo + titulantes(x);
-
                         if(x.includes("Rojas Miranda") || x.includes("Marín Pacheco") || x.includes("Tapia Reyes")){
                         docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+9</td><td class="text-center fw-bold">${todas(x)+9}</td></tr>`;
                         } else if(x.includes("Cortez Orellana") || x.includes("Castro Meza") ){
@@ -161,7 +157,7 @@
 
                 guiades.innerHTML = todoSeminario+todoTitulo+14;
                 guias.innerHTML = docentesSinRepetir.length;
-                promedio.innerHTML = (todoSeminario+todoTitulo+14)/docentesSinRepetir.length;
+                promedio.innerHTML = Math.ceil((todoSeminario+todoTitulo+14)/docentesSinRepetir.length);
 
 
                 }
