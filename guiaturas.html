@@ -23,6 +23,7 @@
                                     <option value="evaluaciones.html">Evaluaciones</option>
                                     <option value="guiaturas.html" selected>Guiaturas</option>
                                     <option value="memorias.html">Memorias</option>
+                                    <option value="tet.html">TET</option>
                                 </select>
                             </div>
                         </div>
@@ -39,30 +40,25 @@
                     <p>En el <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> se establece, originalmente, que:</p>
 
                     <ul>
-                        <li class="mx-3 text-body-secondary small mb-2">
-                            [El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo la dirección de un(a) académico(a) con jerarquía de Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado que haya
-                            desarrollado investigación relacionada con el tema abordado (Art. 9)
+                        <li class="mx-3 text-body-secondary small mb-2">[El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo la dirección de <em>un(a) académico(a) con jerarquía de Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado</em> que haya desarrollado investigación relacionada con el tema abordado (Art. 9)
                         </li>
 
                         <li class="mx-3 text-body-secondary small">[Para Profesor/a Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</li>
                     </ul>
 
-                    <p><em>Por un ajuste al reglamento, queda que la dirección puede ser directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p>
+                    <p>Por un ajuste al reglamento, queda que la dirección puede ser directa o indirecta; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p>
 
-                    <p>
-                        Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I o II), aportan al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR; y quienes lo hacen en Proyecto de Título (I
-                        o II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.
-                    </p>
+                    <p>Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I o II), aportan al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR; y quienes lo hacen en Proyecto de Título (I o II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.</p>
 
-                    <p>En la tabla que sigue se identifica a quienes se desempeñan en el segundo semestre de 2023 como guías o co-guías*, junto con la cantidad de guiadas/os por cada una/o:</p>
+                    <p>En la tabla que sigue se identifica a <em>quienes se desempeñan en el segundo semestre de 2023 como guías y co-guías*</em>, en <em>Seminario</em> de Licenciatura y/o <em>Proyecto</em> de Título, junto con la cantidad de estudiantes guiadas/os:</p>
 
                     <table class="table small">
                         <caption class="text-center small text-body-secondary">
-                            El asterisco* marca a docentes que no cumplen con adscripción ni jerarquía, pero fueron habilitadas/os a ser co-guías por ajuste al reglamento. Las cifras que en la columna de Proyecto son agregadas como +9 y +5 refieren, respectivamente, al total de estudiantes en mención industrial y mención gráfica del <abbr title="Taller Excepcional de Titulación" class="initialism">TET</abbr>. Cada mención del <abbr title="Taller Excepcional de Titulación" class="initialism">TET</abbr> se suma una única vez al total.
+                            Las cifras que en la columna de Proyecto son agregadas como +9 y +5 refieren, respectivamente, al total de estudiantes en mención industrial y mención gráfica del <a href="tet.html" class="link-secondary">Taller Excepcional de Titulación para titulantes fuera de plazo (<span class="initialism">TET</span>)</a>. Cada mención del <span class="initialism">TET</span> se suma una única vez al total de estudiantes guiadas/os.
                         </caption>
                         <thead>
                             <tr>
-                                <th>Profesor(a) Guía</th>
+                                <th>Guía y co-guías*</th>
                                 <th class="text-center">Seminario</th>
                                 <th class="text-center">Proyecto</th>
                                 <th class="text-center">TOTAL</th>
@@ -153,7 +149,7 @@
                         }
 
                     })
-                docentes.innerHTML += `<tr class="fw-bold"><td>TOTAL</td><td class="text-center">${todoSeminario}</td><td class="text-center">${todoTitulo+14}</td><td class="text-center fw-bold">${todoSeminario+todoTitulo+14}</td></tr>`
+                docentes.innerHTML += `<tr class="fw-bold"><td>TOTAL DE ESTUDIANTES GUIADAS/OS</td><td class="text-center">${todoSeminario}</td><td class="text-center">${todoTitulo+14}</td><td class="text-center fw-bold">${todoSeminario+todoTitulo+14}</td></tr>`
 
                 guiades.innerHTML = todoSeminario+todoTitulo+14;
                 guias.innerHTML = docentesSinRepetir.length;
@@ -168,7 +164,7 @@
             function todas(x) {
                 let numero = 0;
                 datos.forEach(d => {
-                    if (d.profe == x && d.estudiante != "") {
+                    if (d.profe == x && d.estudiante) {
                         numero++;
                     }
                 })
@@ -178,7 +174,7 @@
             function seminaristas(x) {
                 let numero = 0;
                 datos.forEach(d => {
-                    if (d.profe == x && d.year == "4" && d.estudiante != "") {
+                    if (d.profe == x && d.year == "4" && d.estudiante) {
                         numero++;
                     }
                 })
@@ -188,7 +184,7 @@
             function titulantes(x) {
                 let numero = 0;
                 datos.forEach(d => {
-                    if (d.profe == x && d.year == "5" && d.estudiante != "") {
+                    if (d.profe == x && d.year == "5" && d.estudiante) {
                         numero++;
                     }
                 })
