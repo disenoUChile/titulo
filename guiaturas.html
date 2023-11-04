@@ -39,32 +39,45 @@
                     <p>En el <a href="https://fau.uchile.cl/dam/jcr:3f7b4e53-cea0-48fe-9f31-8e1991e21d29/Dise%EF%BF%BDo_v4.pdf" target="_blank" class="link-dark">reglamento del plan de estudios</a> se establece, originalmente, que:</p>
 
                     <ul>
-
-                        <li class="mx-3 text-body-secondary small mb-2">[El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo la dirección de un(a) académico(a) con jerarquía de Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado que haya desarrollado investigación relacionada con el tema abordado (Art. 9)</li>
+                        <li class="mx-3 text-body-secondary small mb-2">
+                            [El trabajo tutelado de Seminario de Licenciatura se desarrolla] bajo la dirección de un(a) académico(a) con jerarquía de Profesor(a) adscrito al Departamento de Diseño o a la Escuela de Pregrado que haya
+                            desarrollado investigación relacionada con el tema abordado (Art. 9)
+                        </li>
 
                         <li class="mx-3 text-body-secondary small">[Para Profesor/a Guía de Proyecto de Título deben respetarse] los mismos criterios definidos en artículo 9 (Art 27).</li>
-
                     </ul>
 
-                    <p><em>Por un ajuste al reglamento, queda que la dirección puede ser directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p> 
+                    <p><em>Por un ajuste al reglamento, queda que la dirección puede ser directa o indirecta</em>; este ajuste habilita a docentes que no cumplen con adscripción ni jerarquía a desempeñarse como co-guías.</p>
 
-                    <p>Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I y II), aportan al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR. Y quienes lo hacen en Proyecto de Título (I y II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.</p>
+                    <p>
+                        Quienes se desempeñan como guías o co-guías en Seminario de Licenciatura (I o II), aportan al segundo ciclo del plan de formación, con énfasis en EXPLORAR PARA INTERVENIR; y quienes lo hacen en Proyecto de Título (I
+                        o II), aportan al tercer y último ciclo: PROPONER PARA TRANSFORMAR.
+                    </p>
 
-                    <p>En la tabla que sigue se identifica a quienes se desempeñan en el segundo semestre de 2023 como guías o co-guías, junto con la cantidad de guiadas/os por cada una/o:</p>
+                    <p>En la tabla que sigue se identifica a quienes se desempeñan en el segundo semestre de 2023 como guías o co-guías*, junto con la cantidad de guiadas/os por cada una/o:</p>
 
-                <table class="table table-hover small">
-                <!--<caption class="text-center small text-body-secondary">* Docentes que no cumplen con adscripción ni jerarquía, habilitadas/os por ajuste de reglamento a ser co-guías.</caption>-->
-                <thead>
-                    <tr>
-                        <th>Profesor(a) Guía</th>
-                        <th class="text-center">Seminario</th>
-                        <th class="text-center">Proyecto</th>
-                        <th class="text-center">TOTAL</th>
-                    </tr>
-                </thead>
-                <tbody id="docentes"></tbody>
-            </table> 
-                    
+                    <table class="table table-hover small">
+                        <caption class="text-center small text-body-secondary">
+                            El asterisco (*) marca a docentes que no cumplen con adscripción ni jerarquía, pero fueron habilitadas/os a ser co-guías por ajuste al reglamento. Las cifras que en la columna de Proyecto son agregadas como +9 y
+                            +5 refieren, respectivamente, al total de estudiantes en mención industrial y mención gráfica del
+                            <abbr title="Taller Excepcional de Titulación" class="initialism">TET</abbr>
+                            .
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Profesor(a) Guía</th>
+                                <th class="text-center">Seminario</th>
+                                <th class="text-center">Proyecto</th>
+                                <th class="text-center">TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody id="docentes"></tbody>
+                    </table>
+
+                    <p>
+                        El total es de <span id="guiades"></span> estudiantes guiadas/os. Cuando el total de habilitadas/os para guiar es de <span id="profes"></span>, el promedio de estudiantes por guía debería ser de
+                        <span id="promedio"></span>.
+                    </p>
                 </div>
             </div>
         </div>
@@ -84,7 +97,12 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+            integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
 
         <script>
             document.addEventListener("scroll", (event) => {
@@ -106,6 +124,12 @@
             var profes = [];
             var docentesSinRepetir;
             const docentes = document.querySelector("#docentes");
+            var todoSeminario = 0;
+            var todoTitulo = 0;
+
+            const guiades = document.querySelector("#guiades");
+            const guias =  document.querySelector("#profes");
+            const promedio = document.querySelector("#promedio");
 
             Papa.parse("https://raw.githubusercontent.com/disenoUChile/titulo/main/data/guiaturas.csv", {
                 download: true,
@@ -114,24 +138,41 @@
                     console.log(results);
                     datos = results.data;
                     datos.forEach((d) => {
-                        if (d.year == "4") { parciales.seminario.push(d); } 
-                        if (d.year == "4") { parciales.titulo.push(d); } 
+                        if (d.year == "4") { parciales.seminario.push(d); }
+                        if (d.year == "4") { parciales.titulo.push(d); }
                         profes.push(d.profe);
                     });
                     total = parciales.seminario.length + parciales.titulo.length;
                     docentesSinRepetir = [...new Set(profes)];
-                    var todos = 0;
-                    var filaTipo;
                     docentesSinRepetir.forEach(x => {
+                        todoSeminario = todoSeminario + seminaristas(x);
+                        todoTitulo = todoTitulo + titulantes(x);
+
+                        if(x.includes("Rojas Miranda") || x.includes("Marín Pacheco") || x.includes("Tapia Reyes")){
+                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+9</td><td class="text-center fw-bold">${todas(x)+9}</td></tr>`;
+                        } else if(x.includes("Cortez Orellana") || x.includes("Castro Meza") ){
+                        docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}+5</td><td class="text-center fw-bold">${todas(x)+5}</td></tr>`;
+                        } else {
                         docentes.innerHTML += `<tr><td>${x}</td><td class="text-center">${seminaristas(x)}</td><td class="text-center">${titulantes(x)}</td><td class="text-center fw-bold">${todas(x)}</td></tr>`;
+                        }
 
                     })
+                docentes.innerHTML += `<tr class="fw-bold"><td>TOTAL</td><td class="text-center">${todoSeminario}</td><td class="text-center">${todoTitulo+14}</td><td class="text-center fw-bold">${todoSeminario+todoTitulo+14}</td></tr>`
+
+                guiades.innerHTML = todoSeminario+todoTitulo+14;
+                guias.innerHTML = docentesSinRepetir.length;
+                promedio.innerHTML = (todoSeminario+todoTitulo+14)/docentesSinRepetir.length;
+
+
                 }
+
+
+
             });
             function todas(x) {
                 let numero = 0;
                 datos.forEach(d => {
-                    if (d.profe == x) { 
+                    if (d.profe == x && d.estudiante != "") {
                         numero++;
                     }
                 })
@@ -141,7 +182,7 @@
             function seminaristas(x) {
                 let numero = 0;
                 datos.forEach(d => {
-                    if (d.profe == x && d.year == "4") { 
+                    if (d.profe == x && d.year == "4" && d.estudiante != "") {
                         numero++;
                     }
                 })
@@ -151,14 +192,12 @@
             function titulantes(x) {
                 let numero = 0;
                 datos.forEach(d => {
-                    if (d.profe == x && d.year == "5") { 
+                    if (d.profe == x && d.year == "5" && d.estudiante != "") {
                         numero++;
                     }
                 })
                 return numero;
             }
-
-
         </script>
     </body>
 </html>
