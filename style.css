@@ -6,13 +6,13 @@ em {
 .display {
     font-size: calc(1.5rem + 1.5vh + 1vw);
     font-weight: 300;
-    color: #abbbc4;
+    color: #92a0a8;
 }
 
 .display-sm {
     font-size: calc(1.5rem + 1.5vh + 1vw);
     font-weight: 300;
-    color: #abbbc4;
+    color: #92a0a8;
     text-transform: lowercase;
     font-variant: small-caps;
     letter-spacing: 0.1rem;
