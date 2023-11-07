@@ -32,15 +32,17 @@ em {
     margin-top: -5px;
 }
 
+span.creacion {
+    color: #b2df8a;
+}
+
 span.innovacion {
-    color: var(--bs-primary);
+    color: #a6cee3;
 }
 span.investigacion {
-    color: var(--bs-info);
+    color: #1f78b4;
 }
-span.creacion {
-    color: var(--bs-warning);
-}
+
 
 .apaga {
     opacity: 0.5;
