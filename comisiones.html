@@ -84,7 +84,7 @@
                                 <div class="accordion-body">
                                     <div class="table-responsive">
                                         <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <span class="creacion">&#9632;</span> creación, <span class="innovacion">&#9632;</span> innovación y/o <span class="investigacion">&#9632;</span> investigacion.</caption>
+                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
                                             <thead class="align-top">
                                                 <tr>
                                                     <th class="w-25">Horario</th>
@@ -136,7 +136,7 @@
                                 <div class="accordion-body">
                                     <div class="table-responsive">
                                         <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <span class="creacion">&#9632;</span> creación, <span class="innovacion">&#9632;</span> innovación y/o <span class="investigacion">&#9632;</span> investigacion.</caption>
+                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
                                             <thead class="align-top">
                                                 <tr>
                                                     <th class="w-25">Horario</th>
@@ -188,7 +188,7 @@
                                 <div class="accordion-body">
                                     <div class="table-responsive">
                                         <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <span class="creacion">&#9632;</span> creación, <span class="innovacion">&#9632;</span> innovación y/o <span class="investigacion">&#9632;</span> investigacion.</caption>
+                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
                                             <thead class="align-top">
                                                 <tr>
                                                     <th class="w-25">Horario</th>
@@ -240,7 +240,7 @@
                                 <div class="accordion-body">
                                     <div class="table-responsive">
                                         <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <span class="creacion">&#9632;</span> creación, <span class="innovacion">&#9632;</span> innovación y/o <span class="investigacion">&#9632;</span> investigacion.</caption>
+                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
                                             <thead class="align-top">
                                                 <tr>
                                                     <th class="w-25">Horario</th>
@@ -292,7 +292,7 @@
                                 <div class="accordion-body">
                                     <div class="table-responsive">
                                         <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <span class="creacion">&#9632;</span> creación, <span class="innovacion">&#9632;</span> innovación y/o <span class="investigacion">&#9632;</span> investigacion.</caption>
+                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
                                             <thead class="align-top">
                                                 <tr>
                                                     <th class="w-25">Horario</th>
@@ -627,13 +627,13 @@
                     function pofesorado(x) {
                         var enfasis = "";
                         if (x.enfasis.includes("innovación")) {
-                            enfasis += `<span class="innovacion">&#9632;</span>`;
+                            enfasis += `<small class="innovacion">&#9632;</small>`;
                         }
                         if (x.enfasis.includes("investigación")) {
-                            enfasis += `<span class="investigacion">&#9632;</span>`;
+                            enfasis += `<small class="investigacion">&#9632;</small>`;
                         }
                         if (x.enfasis.includes("creación")) {
-                            enfasis += `<span class="creacion">&#9632;</span>`;
+                            enfasis += `<small class="creacion">&#9632;</small>`;
                         }
                         var nombre = `${enfasis} ${x.nombre} ${x.apellidop}<br/>`;
                         return nombre;
