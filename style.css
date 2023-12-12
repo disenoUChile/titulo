@@ -32,17 +32,20 @@ em {
     margin-top: -5px;
 }
 
-small.creacion {
-    color: #b2df8a;
+small.tematica-cp {
+    color: #f4a582;
 }
 
-small.innovacion {
-    color: #a6cee3;
+small.tematica-vm {
+    color: #92c5de;
 }
-small.investigacion {
-    color: #1f78b4;
+small.tematica-ip {
+    color: #b2182b;
 }
 
+small.tematica-tmp {
+    color: #2166ac;
+}
 
 .apaga {
     opacity: 0.5;
