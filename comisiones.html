@@ -53,278 +53,141 @@
                     <p>Al colaborar, la Coordinación atiende a disponibilidad horaria, mención, especialidad y énfasis de cada docente que participa de las <a href="guiaturas.html" class="link-dark">guiaturas</a>.</p>
 
                     <p>A continuación pueden consultarse las disponibilidades horarias junto con especialidad y énfasis declarados para <em>el segundo semestre de 2023</em>:</p>
-                </div>
-                <div class="col-12 col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto">
-                    <div class="accordion accordion-flush shadow-sm mb-5 mx-1 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5" id="acordeon">
-                        <!--primera-->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-primera" aria-expanded="false" aria-controls="flush-primera">
-                                    LUNES
-                                </button>
-                            </h2>
 
-                            <div id="pajero"></div>
+                    <div class="input-group mt-5">
+                        <div class="input-group input-group-sm shadow-sm">
+                            <label class="input-group-text" for="verProfe">Prof. Guía</label>
+                            <select class="form-select" id="verProfe">
+                                <option value="todo">Todos/as</option>
+                                <option value="prof-1">Jenny Abud</option>
+                                <option value="prof-71099">Ingrid Calvo</option>
+                                <option value="prof-40224">Eduardo Castillo</option>
+                                <option value="prof-2">Ricardo Castro</option>
+                                <option value="prof-51470">Felipe Cortez</option>
+                                <option value="prof-21430">Paola de la Sotta</option>
+                                <option value="prof-51141">Pablo Domínguez</option>
+                                <option value="prof-31519">Sergio Donoso</option>
+                                <option value="prof-17335">Rodrigo Dueñas</option>
+                                <option value="prof-16821">Pamela Gatica</option>
+                                <option value="prof-30442">Cristian Gómez</option>
+                                <option value="prof-30742">Rubén Jacob</option>
+                                <option value="prof-57067">Lorna Lares</option>
+                                <option value="prof-10146">Juan Carlos Lepe</option>
+                                <option value="prof-29586">Félix Maldonado</option>
+                                <option value="prof-3">José Marín</option>
+                                <option value="prof-25820">Iván Méndez</option>
+                                <option value="prof-4">María Paz Morales</option>
+                                <option value="prof-22471">Héctor Morales</option>
+                                <option value="prof-24818">Pablo Núñez</option>
+                                <option value="prof-39338">Verónica Ode</option>
+                                <option value="prof-59788">Astrid Osorio</option>
+                                <option value="prof-54091">Roberto Osses</option>
+                                <option value="prof-50589">Sebastian Pagueguy</option>
+                                <option value="prof-5">Alejandro Pantoja</option>
+                                <option value="prof-23435">Rene Perea</option>
+                                <option value="prof-65724">Bruno Perelli</option>
+                                <option value="prof-34257">Gabriela Pradenas</option>
+                                <option value="prof-28329">Daniel Reyes</option>
+                                <option value="prof-6">Macarena Ruiz</option>
+                                <option value="prof-43537">Rebeca Silva</option>
+                                <option value="prof-35210">Leonardo Soto</option>
+                                <option value="prof-58037">Hans Stange</option>
+                                <option value="prof-34140">Mauricio Tapia</option>
+                                <option value="prof-56222">Rodrigo Vera</option>
+                                <option value="prof-17874">Mauricio Vico</option>
+                                <option value="prof-29097">Andrea Wechsler</option>
+                                <option value="prof-7">Mariana Young</option>
+                                <option value="prof-33113">Osvaldo Zorzano</option>
+                            </select>
 
-                            <div id="flush-primera" class="accordion-collapse collapse" data-bs-parent="#acordeon">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
-                                            <thead class="align-top">
-                                                <tr>
-                                                    <th class="w-25">Horario</th>
-                                                    <th>Estudios visuales y mediales</th>
-                                                    <th>Identidad y patrimonio</th>
-                                                    <th>Materiales, tecnologías y procesos</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="small">
-                                                <tr>
-                                                    <th>09:00 a 10.50 hrs.</th>
-                                                    <td id="lun_uno_visual"></td>
-                                                    <td id="lun_uno_patrimonial"></td>
-                                                    <td id="lun_uno_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>11.00 a 12.50 hrs.</th>
-                                                    <td id="lun_dos_visual"></td>
-                                                    <td id="lun_dos_patrimonial"></td>
-                                                    <td id="lun_dos_material"></td>
-                                                </tr>
+                            <label class="input-group-text" for="verEnfasis">Énfasis del Proyecto</label>
+                            <select class="form-select" id="verEnfasis">
+                                <option value="todo-enfasis">Todos</option>
+                                <option value="enfasis-1">Creación</option>
+                                <option value="enfasis-2">Innovación</option>
+                                <option value="enfasis-3">Investigación</option>
+                            </select>
 
-                                                <tr>
-                                                    <th>15.00 a 16.50 hrs.</th>
-                                                    <td id="lun_tres_visual"></td>
-                                                    <td id="lun_tres_patrimonial"></td>
-                                                    <td id="lun_tres_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>17.00 a 18.50 hrs.</th>
-                                                    <td id="lun_cuatro_visual"></td>
-                                                    <td id="lun_cuatro_patrimonial"></td>
-                                                    <td id="lun_cuatro_material"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--segunda-->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-segunda" aria-expanded="false" aria-controls="flush-segunda">
-                                    MARTES
-                                </button>
-                            </h2>
-                            <div id="flush-segunda" class="accordion-collapse collapse" data-bs-parent="#acordeon">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
-                                            <thead class="align-top">
-                                                <tr>
-                                                    <th class="w-25">Horario</th>
-                                                    <th>Estudios visuales y mediales</th>
-                                                    <th>Identidad y patrimonio</th>
-                                                    <th>Materiales, tecnologías y procesos</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="small">
-                                                <tr>
-                                                    <th>09:00 a 10.50 hrs.</th>
-                                                    <td id="mar_uno_visual"></td>
-                                                    <td id="mar_uno_patrimonial"></td>
-                                                    <td id="mar_uno_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>11.00 a 12.50 hrs.</th>
-                                                    <td id="mar_dos_visual"></td>
-                                                    <td id="mar_dos_patrimonial"></td>
-                                                    <td id="mar_dos_material"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th>15.00 a 16.50 hrs.</th>
-                                                    <td id="mar_tres_visual"></td>
-                                                    <td id="mar_tres_patrimonial"></td>
-                                                    <td id="mar_tres_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>17.00 a 18.50 hrs.</th>
-                                                    <td id="mar_cuatro_visual"></td>
-                                                    <td id="mar_cuatro_patrimonial"></td>
-                                                    <td id="mar_cuatro_material"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--tercera-->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-tercera" aria-expanded="false" aria-controls="flush-tercera">
-                                    MIÉRCOLES
-                                </button>
-                            </h2>
-                            <div id="flush-tercera" class="accordion-collapse collapse" data-bs-parent="#acordeon">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
-                                            <thead class="align-top">
-                                                <tr>
-                                                    <th class="w-25">Horario</th>
-                                                    <th>Estudios visuales y mediales</th>
-                                                    <th>Identidad y patrimonio</th>
-                                                    <th>Materiales, tecnologías y procesos</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="small">
-                                                <tr>
-                                                    <th>09:00 a 10.50 hrs.</th>
-                                                    <td id="mie_uno_visual"></td>
-                                                    <td id="mie_uno_patrimonial"></td>
-                                                    <td id="mie_uno_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>11.00 a 12.50 hrs.</th>
-                                                    <td id="mie_dos_visual"></td>
-                                                    <td id="mie_dos_patrimonial"></td>
-                                                    <td id="mie_dos_material"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th>15.00 a 16.50 hrs.</th>
-                                                    <td id="mie_tres_visual"></td>
-                                                    <td id="mie_tres_patrimonial"></td>
-                                                    <td id="mie_tres_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>17.00 a 18.50 hrs.</th>
-                                                    <td id="mie_cuatro_visual"></td>
-                                                    <td id="mie_cuatro_patrimonial"></td>
-                                                    <td id="mie_cuatro_material"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--cuarta-->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-cuarta" aria-expanded="false" aria-controls="flush-cuarta">
-                                    JUEVES
-                                </button>
-                            </h2>
-                            <div id="flush-cuarta" class="accordion-collapse collapse" data-bs-parent="#acordeon">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
-                                            <thead class="align-top">
-                                                <tr>
-                                                    <th class="w-25">Horario</th>
-                                                    <th>Estudios visuales y mediales</th>
-                                                    <th>Identidad y patrimonio</th>
-                                                    <th>Materiales, tecnologías y procesos</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="small">
-                                                <tr>
-                                                    <th>09:00 a 10.50 hrs.</th>
-                                                    <td id="jue_uno_visual"></td>
-                                                    <td id="jue_uno_patrimonial"></td>
-                                                    <td id="jue_uno_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>11.00 a 12.50 hrs.</th>
-                                                    <td id="jue_dos_visual"></td>
-                                                    <td id="jue_dos_patrimonial"></td>
-                                                    <td id="jue_dos_material"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th>15.00 a 16.50 hrs.</th>
-                                                    <td id="jue_tres_visual"></td>
-                                                    <td id="jue_tres_patrimonial"></td>
-                                                    <td id="jue_tres_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>17.00 a 18.50 hrs.</th>
-                                                    <td id="jue_cuatro_visual"></td>
-                                                    <td id="jue_cuatro_patrimonial"></td>
-                                                    <td id="jue_cuatro_material"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--quinta-->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-quinta" aria-expanded="false" aria-controls="flush-quinta">
-                                    VIERNES
-                                </button>
-                            </h2>
-                            <div id="flush-quinta" class="accordion-collapse collapse" data-bs-parent="#acordeon">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table small">
-                                            <caption class="w-75 small ms-auto me-0 pt-3 pb-4 px-2">Se marca énfasis declarado en <small class="creacion">&#9632;</small> creación, <small class="innovacion">&#9632;</small> innovación y/o <small class="investigacion">&#9632;</small> investigacion.</caption>
-                                            <thead class="align-top">
-                                                <tr>
-                                                    <th class="w-25">Horario</th>
-                                                    <th>Estudios visuales y mediales</th>
-                                                    <th>Identidad y patrimonio</th>
-                                                    <th>Materiales, tecnologías y procesos</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="small">
-                                                <tr>
-                                                    <th>09:00 a 10.50 hrs.</th>
-                                                    <td id="vie_uno_visual"></td>
-                                                    <td id="vie_uno_patrimonial"></td>
-                                                    <td id="vie_uno_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>11.00 a 12.50 hrs.</th>
-                                                    <td id="vie_dos_visual"></td>
-                                                    <td id="vie_dos_patrimonial"></td>
-                                                    <td id="vie_dos_material"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th>15.00 a 16.50 hrs.</th>
-                                                    <td id="vie_tres_visual"></td>
-                                                    <td id="vie_tres_patrimonial"></td>
-                                                    <td id="vie_tres_material"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>17.00 a 18.50 hrs.</th>
-                                                    <td id="vie_cuatro_visual"></td>
-                                                    <td id="vie_cuatro_patrimonial"></td>
-                                                    <td id="vie_cuatro_material"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                            <label class="input-group-text" for="verMencion">Título profesional</label>
+                            <select class="form-select" id="verMencion">
+                                <option value="toda-mencion">Todos</option>
+                                <option value="mencion-0">Diseñador/a</option>
+                                <option value="mencion-1">Diseñador/a con mención Industrial y Servicios</option>
+                                <option value="mencion-2">Diseñador/a con mención en Visualidad y Medios</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div>
+        <div class="container-fluid pb-5">
+            <div class="row">
+                <div class="col-lg-12 col-xl-11 col-xxl-10 mx-auto">
+                    <div class="table-responsive">
+                        <table class="table small bg-white">
+                            <thead class="align-top">
+                                <tr>
+                                    <th class="w-10">Horario</th>
+                                    <th>LUNES</th>
+                                    <th>MARTES</th>
+                                    <th>MIERCOLES</th>
+                                    <th>JUEVES</th>
+                                    <th>VIERNES</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <th>09:00 a 10.50 hrs.</th>
+                                    <td id="lun_uno"></td>
+                                    <td id="mar_uno"></td>
+                                    <td id="mie_uno"></td>
+                                    <td id="jue_uno"></td>
+                                    <td id="vie_uno"></td>
+                                </tr>
+                                <tr>
+                                    <th>11.00 a 12.50 hrs.</th>
+                                    <td id="lun_dos"></td>
+                                    <td id="mar_dos"></td>
+                                    <td id="mie_dos"></td>
+                                    <td id="jue_dos"></td>
+                                    <td id="vie_dos"></td>
+                                </tr>
+                                <tr>
+                                    <th>15.00 a 16.50 hrs.</th>
+                                    <td id="lun_tres"></td>
+                                    <td id="mar_tres"></td>
+                                    <td id="mie_tres"></td>
+                                    <td id="jue_tres"></td>
+                                    <td id="vie_tres"></td>
+                                </tr>
+
+                                <tr>
+                                    <th>17.00 a 18.50 hrs.</th>
+                                    <td id="lun_cuatro"></td>
+                                    <td id="mar_cuatro"></td>
+                                    <td id="mie_cuatro"></td>
+                                    <td id="jue_cuatro"></td>
+                                    <td id="vie_cuatro"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="small text-center mt-4">
+                        <small class="tematica-cp">&#9632;</small>
+                        Diseño centrado en las personas
+                        <small class="tematica-vm ms-2">&#9632;</small>
+                        Estudios visuales y mediales
+                        <small class="tematica-ip ms-2">&#9632;</small>
+                        Identidad y patrimonio
+                        <small class="tematica-tmp ms-2">&#9632;</small>
+                        Tecnologías, materiales y procesos
+                    </p>
+            </div>
+        </div>
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
@@ -335,7 +198,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
@@ -345,80 +209,36 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         ></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
         <script>
-            document.addEventListener("scroll", (event) => {
-                document.querySelector("nav").classList.add("shadow-sm");
-            });
-
-            document.addEventListener("scrollend", (event) => {
-                var y = window.scrollY;
-                if (y == 0) {
-                    document.querySelector("nav").classList.remove("shadow-sm");
-                }
-            });
-
             //todas las celdas
 
-            const lun_uno_visual = document.querySelector("#lun_uno_visual");
-            const lun_uno_patrimonial = document.querySelector("#lun_uno_patrimonial");
-            const lun_uno_material = document.querySelector("#lun_uno_material");
-            const lun_dos_visual = document.querySelector("#lun_dos_visual");
-            const lun_dos_patrimonial = document.querySelector("#lun_dos_patrimonial");
-            const lun_dos_material = document.querySelector("#lun_dos_material");
-            const lun_tres_visual = document.querySelector("#lun_tres_visual");
-            const lun_tres_patrimonial = document.querySelector("#lun_tres_patrimonial");
-            const lun_tres_material = document.querySelector("#lun_tres_material");
-            const lun_cuatro_visual = document.querySelector("#lun_cuatro_visual");
-            const lun_cuatro_patrimonial = document.querySelector("#lun_cuatro_patrimonial");
-            const lun_cuatro_material = document.querySelector("#lun_cuatro_material");
-            const mar_uno_visual = document.querySelector("#mar_uno_visual");
-            const mar_uno_patrimonial = document.querySelector("#mar_uno_patrimonial");
-            const mar_uno_material = document.querySelector("#mar_uno_material");
-            const mar_dos_visual = document.querySelector("#mar_dos_visual");
-            const mar_dos_patrimonial = document.querySelector("#mar_dos_patrimonial");
-            const mar_dos_material = document.querySelector("#mar_dos_material");
-            const mar_tres_visual = document.querySelector("#mar_tres_visual");
-            const mar_tres_patrimonial = document.querySelector("#mar_tres_patrimonial");
-            const mar_tres_material = document.querySelector("#mar_tres_material");
-            const mar_cuatro_visual = document.querySelector("#mar_cuatro_visual");
-            const mar_cuatro_patrimonial = document.querySelector("#mar_cuatro_patrimonial");
-            const mar_cuatro_material = document.querySelector("#mar_cuatro_material");
-            const mie_uno_visual = document.querySelector("#mie_uno_visual");
-            const mie_uno_patrimonial = document.querySelector("#mie_uno_patrimonial");
-            const mie_uno_material = document.querySelector("#mie_uno_material");
-            const mie_dos_visual = document.querySelector("#mie_dos_visual");
-            const mie_dos_patrimonial = document.querySelector("#mie_dos_patrimonial");
-            const mie_dos_material = document.querySelector("#mie_dos_material");
-            const mie_tres_visual = document.querySelector("#mie_tres_visual");
-            const mie_tres_patrimonial = document.querySelector("#mie_tres_patrimonial");
-            const mie_tres_material = document.querySelector("#mie_tres_material");
-            const mie_cuatro_visual = document.querySelector("#mie_cuatro_visual");
-            const mie_cuatro_patrimonial = document.querySelector("#mie_cuatro_patrimonial");
-            const mie_cuatro_material = document.querySelector("#mie_cuatro_material");
-            const jue_uno_visual = document.querySelector("#jue_uno_visual");
-            const jue_uno_patrimonial = document.querySelector("#jue_uno_patrimonial");
-            const jue_uno_material = document.querySelector("#jue_uno_material");
-            const jue_dos_visual = document.querySelector("#jue_dos_visual");
-            const jue_dos_patrimonial = document.querySelector("#jue_dos_patrimonial");
-            const jue_dos_material = document.querySelector("#jue_dos_material");
-            const jue_tres_visual = document.querySelector("#jue_tres_visual");
-            const jue_tres_patrimonial = document.querySelector("#jue_tres_patrimonial");
-            const jue_tres_material = document.querySelector("#jue_tres_material");
-            const jue_cuatro_visual = document.querySelector("#jue_cuatro_visual");
-            const jue_cuatro_patrimonial = document.querySelector("#jue_cuatro_patrimonial");
-            const jue_cuatro_material = document.querySelector("#jue_cuatro_material");
-            const vie_uno_visual = document.querySelector("#vie_uno_visual");
-            const vie_uno_patrimonial = document.querySelector("#vie_uno_patrimonial");
-            const vie_uno_material = document.querySelector("#vie_uno_material");
-            const vie_dos_visual = document.querySelector("#vie_dos_visual");
-            const vie_dos_patrimonial = document.querySelector("#vie_dos_patrimonial");
-            const vie_dos_material = document.querySelector("#vie_dos_material");
-            const vie_tres_visual = document.querySelector("#vie_tres_visual");
-            const vie_tres_patrimonial = document.querySelector("#vie_tres_patrimonial");
-            const vie_tres_material = document.querySelector("#vie_tres_material");
-            const vie_cuatro_visual = document.querySelector("#vie_cuatro_visual");
-            const vie_cuatro_patrimonial = document.querySelector("#vie_cuatro_patrimonial");
-            const vie_cuatro_material = document.querySelector("#vie_cuatro_material");
+            const lun_uno = document.querySelector("#lun_uno");
+            const lun_dos = document.querySelector("#lun_dos");
+            const lun_tres = document.querySelector("#lun_tres");
+            const lun_cuatro = document.querySelector("#lun_cuatro");
+
+            const mar_uno = document.querySelector("#mar_uno");
+            const mar_dos = document.querySelector("#mar_dos");
+            const mar_tres = document.querySelector("#mar_tres");
+            const mar_cuatro = document.querySelector("#mar_cuatro");
+
+            const mie_uno = document.querySelector("#mie_uno");
+            const mie_dos = document.querySelector("#mie_dos");
+            const mie_tres = document.querySelector("#mie_tres");
+            const mie_cuatro = document.querySelector("#mie_cuatro");
+
+            const jue_uno = document.querySelector("#jue_uno");
+            const jue_dos = document.querySelector("#jue_dos");
+            const jue_tres = document.querySelector("#jue_tres");
+            const jue_cuatro = document.querySelector("#jue_cuatro");
+
+            const vie_uno = document.querySelector("#vie_uno");
+            const vie_dos = document.querySelector("#vie_dos");
+            const vie_tres = document.querySelector("#vie_tres");
+            const vie_cuatro = document.querySelector("#vie_cuatro");
 
             //otras variables
 
@@ -428,204 +248,201 @@
                 complete: function (results) {
                     console.log(results);
                     results.data.forEach((d) => {
-                        if (d.horario.includes("lunes-1") && d.linea.includes("Estudios visuales y mediales")) {
-                            lun_uno_visual.innerHTML += pofesorado(d);
+                        //1
+                        if (d.horario.includes("lunes-1")) {
+                            lun_uno.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-1") && d.linea.includes("Identidad y patrimonio")) {
-                            lun_uno_patrimonial.innerHTML += pofesorado(d);
+                        if (d.horario.includes("martes-1")) {
+                            mar_uno.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-1") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            lun_uno_material.innerHTML += pofesorado(d);
+                        if (d.horario.includes("miércoles-1")) {
+                            mie_uno.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-2") && d.linea.includes("Estudios visuales y mediales")) {
-                            lun_dos_visual.innerHTML += pofesorado(d);
+                        if (d.horario.includes("jueves-1")) {
+                            jue_uno.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-2") && d.linea.includes("Identidad y patrimonio")) {
-                            lun_dos_patrimonial.innerHTML += pofesorado(d);
+                        if (d.horario.includes("viernes-1")) {
+                            vie_uno.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-2") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            lun_dos_material.innerHTML += pofesorado(d);
+                        //2
+                        if (d.horario.includes("lunes-2")) {
+                            lun_dos.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-3") && d.linea.includes("Estudios visuales y mediales")) {
-                            lun_tres_visual.innerHTML += pofesorado(d);
+                        if (d.horario.includes("martes-2")) {
+                            mar_dos.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-3") && d.linea.includes("Identidad y patrimonio")) {
-                            lun_tres_patrimonial.innerHTML += pofesorado(d);
+                        if (d.horario.includes("miércoles-2")) {
+                            mie_dos.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-3") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            lun_tres_material.innerHTML += pofesorado(d);
+                        if (d.horario.includes("jueves-2")) {
+                            jue_dos.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-4") && d.linea.includes("Estudios visuales y mediales")) {
-                            lun_cuatro_visual.innerHTML += pofesorado(d);
+                        if (d.horario.includes("viernes-2")) {
+                            vie_dos.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-4") && d.linea.includes("Identidad y patrimonio")) {
-                            lun_cuatro_patrimonial.innerHTML += pofesorado(d);
+                        //3
+                        if (d.horario.includes("lunes-3")) {
+                            lun_tres.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("lunes-4") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            lun_cuatro_material.innerHTML += pofesorado(d);
+                        if (d.horario.includes("martes-3")) {
+                            mar_tres.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-1") && d.linea.includes("Estudios visuales y mediales")) {
-                            mar_uno_visual.innerHTML += pofesorado(d);
+                        if (d.horario.includes("miércoles-3")) {
+                            mie_tres.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-1") && d.linea.includes("Identidad y patrimonio")) {
-                            mar_uno_patrimonial.innerHTML += pofesorado(d);
+                        if (d.horario.includes("jueves-3")) {
+                            jue_tres.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-1") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mar_uno_material.innerHTML += pofesorado(d);
+                        if (d.horario.includes("viernes-3")) {
+                            vie_tres.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-2") && d.linea.includes("Estudios visuales y mediales")) {
-                            mar_dos_visual.innerHTML += pofesorado(d);
+
+                        //4
+                        if (d.horario.includes("lunes-4")) {
+                            lun_cuatro.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-2") && d.linea.includes("Identidad y patrimonio")) {
-                            mar_dos_patrimonial.innerHTML += pofesorado(d);
+                        if (d.horario.includes("martes-4")) {
+                            mar_cuatro.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-2") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mar_dos_material.innerHTML += pofesorado(d);
+                        if (d.horario.includes("miércoles-4")) {
+                            mie_cuatro.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-3") && d.linea.includes("Estudios visuales y mediales")) {
-                            mar_tres_visual.innerHTML += pofesorado(d);
+                        if (d.horario.includes("jueves-4")) {
+                            jue_cuatro.innerHTML += profesorado(d);
                         }
-                        if (d.horario.includes("martes-3") && d.linea.includes("Identidad y patrimonio")) {
-                            mar_tres_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("martes-3") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mar_tres_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("martes-4") && d.linea.includes("Estudios visuales y mediales")) {
-                            mar_cuatro_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("martes-4") && d.linea.includes("Identidad y patrimonio")) {
-                            mar_cuatro_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("martes-4") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mar_cuatro_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-1") && d.linea.includes("Estudios visuales y mediales")) {
-                            mie_uno_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-1") && d.linea.includes("Identidad y patrimonio")) {
-                            mie_uno_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-1") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mie_uno_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-2") && d.linea.includes("Estudios visuales y mediales")) {
-                            mie_dos_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-2") && d.linea.includes("Identidad y patrimonio")) {
-                            mie_dos_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-2") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mie_dos_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-3") && d.linea.includes("Estudios visuales y mediales")) {
-                            mie_tres_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-3") && d.linea.includes("Identidad y patrimonio")) {
-                            mie_tres_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-3") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mie_tres_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-4") && d.linea.includes("Estudios visuales y mediales")) {
-                            mie_cuatro_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-4") && d.linea.includes("Identidad y patrimonio")) {
-                            mie_cuatro_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("miércoles-4") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            mie_cuatro_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-1") && d.linea.includes("Estudios visuales y mediales")) {
-                            jue_uno_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-1") && d.linea.includes("Identidad y patrimonio")) {
-                            jue_uno_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-1") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            jue_uno_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-2") && d.linea.includes("Estudios visuales y mediales")) {
-                            jue_dos_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-2") && d.linea.includes("Identidad y patrimonio")) {
-                            jue_dos_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-2") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            jue_dos_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-3") && d.linea.includes("Estudios visuales y mediales")) {
-                            jue_tres_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-3") && d.linea.includes("Identidad y patrimonio")) {
-                            jue_tres_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-3") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            jue_tres_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-4") && d.linea.includes("Estudios visuales y mediales")) {
-                            jue_cuatro_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-4") && d.linea.includes("Identidad y patrimonio")) {
-                            jue_cuatro_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("jueves-4") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            jue_cuatro_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-1") && d.linea.includes("Estudios visuales y mediales")) {
-                            vie_uno_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-1") && d.linea.includes("Identidad y patrimonio")) {
-                            vie_uno_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-1") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            vie_uno_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-2") && d.linea.includes("Estudios visuales y mediales")) {
-                            vie_dos_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-2") && d.linea.includes("Identidad y patrimonio")) {
-                            vie_dos_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-2") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            vie_dos_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-3") && d.linea.includes("Estudios visuales y mediales")) {
-                            vie_tres_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-3") && d.linea.includes("Identidad y patrimonio")) {
-                            vie_tres_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-3") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            vie_tres_material.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-4") && d.linea.includes("Estudios visuales y mediales")) {
-                            vie_cuatro_visual.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-4") && d.linea.includes("Identidad y patrimonio")) {
-                            vie_cuatro_patrimonial.innerHTML += pofesorado(d);
-                        }
-                        if (d.horario.includes("viernes-4") && d.linea.includes("Materiales, tecnologías y procesos")) {
-                            vie_cuatro_material.innerHTML += pofesorado(d);
+                        if (d.horario.includes("viernes-4")) {
+                            vie_cuatro.innerHTML += profesorado(d);
                         }
                     });
 
-                    function pofesorado(x) {
-                        var enfasis = "";
-                        if (x.enfasis.includes("innovación")) {
-                            enfasis += `<small class="innovacion">&#9632;</small>`;
-                        }
-                        if (x.enfasis.includes("investigación")) {
-                            enfasis += `<small class="investigacion">&#9632;</small>`;
-                        }
-                        if (x.enfasis.includes("creación")) {
-                            enfasis += `<small class="creacion">&#9632;</small>`;
-                        }
-                        var nombre = `${enfasis} ${x.nombre} ${x.apellidop}<br/>`;
-                        return nombre;
-                    }
+                    destacar("todo");
+
+                    const selectElement = document.querySelector("#verProfe");
+
+                    selectElement.addEventListener("change", (event) => {
+                        destacar(event.target.value);
+                    });
+
+                    titular("toda-mencion");
+
+                    const selectMencion = document.querySelector("#verMencion");
+
+                    selectMencion.addEventListener("change", (event) => {
+                        titular(event.target.value);
+                    });
+
+                    enfatizar("todo-enfasis");
+
+                    const selectEnfasis = document.querySelector("#verEnfasis");
+
+                    selectEnfasis.addEventListener("change", (event) => {
+                        enfatizar(event.target.value);
+                    });
                 },
             });
+
+            function profesorado(x) {
+                var enfasis = "";
+                if (x.enfasis.includes("creación")) {
+                    enfasis += "enfasis-1 ";
+                }
+                if (x.enfasis.includes("innovación")) {
+                    enfasis += "enfasis-2 ";
+                }
+                if (x.enfasis.includes("investigación")) {
+                    enfasis += "enfasis-3 ";
+                }
+
+                var mencion = "";
+
+                if (x.mencion.includes("Diseñador/a sin mención")) {
+                    mencion += "mencion-0 ";
+                }
+
+                if (x.mencion.includes("Diseñador/a con mención Industrial y Servicios")) {
+                    mencion += "mencion-1 ";
+                }
+
+                if (x.mencion.includes("Diseñador/a con mención Visualidad y Medios")) {
+                    mencion += "mencion-2 ";
+                }
+
+                var tematica = "";
+
+                if (x.linea.includes("Diseño centrado en las personas")) {
+                    tematica += '<small class="tematica-cp">&#9632;</small>';
+                }
+                if (x.linea.includes("Estudios visuales y mediales")) {
+                    tematica += '<small class="tematica-vm">&#9632;</small>';
+                }
+                if (x.linea.includes("Identidad y patrimonio")) {
+                    tematica += '<small class="tematica-ip">&#9632;</small>';
+                }
+                if (x.linea.includes("Materiales, tecnologías y procesos")) {
+                    tematica += '<small class="tematica-tmp">&#9632;</small>';
+                }
+
+                var nombre = `<div class="me-2 prof prof-${x.perfil_id} ${mencion} ${enfasis}">${tematica} ${x.nombre} ${x.apellidop}</div>`;
+                return nombre;
+            }
+
+            async function destacar(x) {
+                var todas = document.getElementsByClassName("prof");
+                var algunas = document.getElementsByClassName(x);
+
+                if (x !== "todo") {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("opacity-50");
+                        e.classList.remove("fw-bold");
+                        e.classList.remove("opacity-100");
+                    });
+                    Array.from(algunas).forEach((e) => {
+                        e.classList.add("fw-bold");
+                        e.classList.add("opacity-100");
+                    });
+                } else {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("opacity-100");
+                        e.classList.remove("fw-bold");
+                    });
+                }
+            }
+
+            async function titular(x) {
+                var todas = document.getElementsByClassName("prof");
+                var algunas = document.getElementsByClassName(x);
+
+                if (x == "toda-mencion") {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                } else {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("d-none");
+                    });
+                    Array.from(algunas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                }
+            }
+
+            async function enfatizar(x) {
+                var todas = document.getElementsByClassName("prof");
+                var algunas = document.getElementsByClassName(x);
+
+                if (x == "todo-enfasis") {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                } else {
+                    Array.from(todas).forEach((e) => {
+                        e.classList.add("d-none");
+                    });
+                    Array.from(algunas).forEach((e) => {
+                        e.classList.remove("d-none");
+                    });
+                }
+            }
         </script>
     </body>
 </html>
